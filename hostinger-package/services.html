@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Services - Pixel Craft Marketing Solutions</title>
+    <meta name="description" content="Comprehensive digital services including web development, app development, digital marketing, graphic design, and more. Professional solutions for Pakistani businesses.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'hsl(213, 82%, 56%)',
+                        secondary: 'hsl(158, 84%, 39%)',
+                        background: 'hsl(0, 0%, 100%)',
+                        foreground: 'hsl(20, 14.3%, 4.1%)',
+                        muted: 'hsl(60, 4.8%, 95.9%)',
+                        border: 'hsl(20, 5.9%, 90%)',
+                        input: 'hsl(20, 5.9%, 90%)',
+                        ring: 'hsl(20, 14.3%, 4.1%)',
+                        destructive: 'hsl(0, 84.2%, 60.2%)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, hsl(213, 82%, 56%) 0%, hsl(220, 75%, 48%) 100%);
+        }
+        
+        .service-card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center text-2xl font-bold text-primary hover:text-blue-700 transition-colors">
+                    <svg class="mr-2" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                        <line x1="12" y1="22.08" x2="12" y2="12"/>
+                    </svg>
+                    Pixel Craft
+                </a>
+
+                <div class="hidden md:block desktop-nav">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary transition-colors">Home</a>
+                        <a href="services.html" class="px-3 py-2 text-sm font-medium text-primary">Services</a>
+                        <a href="packages.html" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary transition-colors">Packages</a>
+                        <a href="about.html" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary transition-colors">About</a>
+                        <a href="contact.html" class="px-3 py-2 text-sm font-medium text-gray-600 hover:text-primary transition-colors">Contact</a>
+                        <a href="contact.html" class="bg-primary hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-primary">Home</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-primary">Services</a>
+                <a href="packages.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-primary">Packages</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-primary">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl lg:text-5xl font-bold mb-6">Our Digital Services</h1>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                    Comprehensive digital solutions designed to elevate your business and drive growth in the Pakistani market.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Grid -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Website Development -->
+                <div class="service-card-hover bg-white border border-gray-200 rounded-lg p-8">
+                    <div class="flex items-start mb-6">
+                        <div class="text-primary mr-4 flex-shrink-0">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16,18 22,12 16,6"/>
+                                <polyline points="8,6 2,12 8,18"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Website Development</h3>
+                            <p class="text-gray-600">Custom websites built with modern technologies, responsive design, and optimized performance for Pakistani businesses.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Key Features:</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Responsive Design
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                SEO Optimized
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Fast Loading
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Mobile Friendly
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Content Management
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                E-commerce Ready
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Pricing Tiers:</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Basic:</span>
+                                <span class="text-sm font-medium text-primary">PKR 25,000 - 50,000</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Standard:</span>
+                                <span class="text-sm font-medium text-primary">PKR 50,000 - 100,000</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Premium:</span>
+                                <span class="text-sm font-medium text-primary">PKR 100,000+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- App Development -->
+                <div class="service-card-hover bg-white border border-gray-200 rounded-lg p-8">
+                    <div class="flex items-start mb-6">
+                        <div class="text-primary mr-4 flex-shrink-0">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-3">App Development</h3>
+                            <p class="text-gray-600">Native and cross-platform mobile applications for iOS and Android with seamless user experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Key Features:</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                iOS & Android
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Cross-Platform
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                UI/UX Design
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                API Integration
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                App Store Deployment
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Maintenance Support
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Pricing Tiers:</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Basic:</span>
+                                <span class="text-sm font-medium text-primary">PKR 75,000 - 150,000</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Standard:</span>
+                                <span class="text-sm font-medium text-primary">PKR 150,000 - 300,000</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Premium:</span>
+                                <span class="text-sm font-medium text-primary">PKR 300,000+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="service-card-hover bg-white border border-gray-200 rounded-lg p-8">
+                    <div class="flex items-start mb-6">
+                        <div class="text-primary mr-4 flex-shrink-0">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Digital Marketing</h3>
+                            <p class="text-gray-600">Comprehensive digital marketing strategies including SEO, PPC, Social Media Marketing, and Content Marketing.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Key Features:</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                SEO Optimization
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                PPC Campaigns
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Social Media Marketing
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Content Marketing
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Email Marketing
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Analytics & Reporting
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Pricing Tiers:</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Basic:</span>
+                                <span class="text-sm font-medium text-primary">PKR 15,000/month</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Standard:</span>
+                                <span class="text-sm font-medium text-primary">PKR 30,000/month</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Premium:</span>
+                                <span class="text-sm font-medium text-primary">PKR 60,000/month</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic Design -->
+                <div class="service-card-hover bg-white border border-gray-200 rounded-lg p-8">
+                    <div class="flex items-start mb-6">
+                        <div class="text-primary mr-4 flex-shrink-0">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="18" cy="5" r="3"/>
+                                <circle cx="6" cy="12" r="3"/>
+                                <circle cx="18" cy="19" r="3"/>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Graphic Design</h3>
+                            <p class="text-gray-600">Professional graphic design services including logo creation, brochures, business cards, and marketing materials.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Key Features:</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Logo Design
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Brand Identity
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Business Cards
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Brochures
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Social Media Graphics
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Print Design
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Pricing Tiers:</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Basic:</span>
+                                <span class="text-sm font-medium text-primary">PKR 5,000 - 15,000</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Standard:</span>
+                                <span class="text-sm font-medium text-primary">PKR 15,000 - 30,000</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Premium:</span>
+                                <span class="text-sm font-medium text-primary">PKR 30,000+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Writing -->
+                <div class="service-card-hover bg-white border border-gray-200 rounded-lg p-8">
+                    <div class="flex items-start mb-6">
+                        <div class="text-primary mr-4 flex-shrink-0">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                                <path d="M2 2l7.586 7.586"/>
+                                <circle cx="11" cy="11" r="2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Content Writing</h3>
+                            <p class="text-gray-600">High-quality content writing services for blogs, websites, marketing materials, and copywriting needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Key Features:</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Blog Writing
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Website Content
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                SEO Articles
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Copywriting
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Technical Writing
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Social Media Content
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Pricing Tiers:</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Basic:</span>
+                                <span class="text-sm font-medium text-primary">PKR 2,000/article</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Standard:</span>
+                                <span class="text-sm font-medium text-primary">PKR 5,000/article</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Premium:</span>
+                                <span class="text-sm font-medium text-primary">PKR 10,000/article</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Production -->
+                <div class="service-card-hover bg-white border border-gray-200 rounded-lg p-8">
+                    <div class="flex items-start mb-6">
+                        <div class="text-primary mr-4 flex-shrink-0">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="23,7 16,12 23,17 23,7"/>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Video Production</h3>
+                            <p class="text-gray-600">Professional video production services including explainer videos, product demos, and promotional content.</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Key Features:</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Explainer Videos
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Product Demos
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Promotional Videos
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Animation
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Video Editing
+                            </div>
+                            <div class="flex items-center text-sm text-gray-600">
+                                <div class="w-2 h-2 bg-primary rounded-full mr-2 flex-shrink-0"></div>
+                                Motion Graphics
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-t pt-6">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Pricing Tiers:</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Basic:</span>
+                                <span class="text-sm font-medium text-primary">PKR 20,000 - 50,000</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Standard:</span>
+                                <span class="text-sm font-medium text-primary">PKR 50,000 - 100,000</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Premium:</span>
+                                <span class="text-sm font-medium text-primary">PKR 100,000+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Additional Digital Solutions</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="bg-white shadow-sm hover:shadow-md transition-shadow rounded-lg p-6 text-center">
+                    <svg class="text-primary mx-auto mb-3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"/>
+                        <circle cx="20" cy="21" r="1"/>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                    </svg>
+                    <h4 class="font-semibold text-gray-900 mb-1">E-commerce Solutions</h4>
+                    <p class="text-sm text-gray-600">From PKR 50,000</p>
+                </div>
+
+                <div class="bg-white shadow-sm hover:shadow-md transition-shadow rounded-lg p-6 text-center">
+                    <svg class="text-primary mx-auto mb-3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 11l3-3 7 7 7-7 3 3-10 10z"/>
+                    </svg>
+                    <h4 class="font-semibold text-gray-900 mb-1">Online Advertising</h4>
+                    <p class="text-sm text-gray-600">From PKR 10,000/month</p>
+                </div>
+
+                <div class="bg-white shadow-sm hover:shadow-md transition-shadow rounded-lg p-6 text-center">
+                    <svg class="text-primary mx-auto mb-3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <polyline points="21,15 16,10 5,21"/>
+                    </svg>
+                    <h4 class="font-semibold text-gray-900 mb-1">Cybersecurity</h4>
+                    <p class="text-sm text-gray-600">From PKR 30,000</p>
+                </div>
+
+                <div class="bg-white shadow-sm hover:shadow-md transition-shadow rounded-lg p-6 text-center">
+                    <svg class="text-primary mx-auto mb-3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                    <h4 class="font-semibold text-gray-900 mb-1">Web Hosting</h4>
+                    <p class="text-sm text-gray-600">From PKR 3,000/year</p>
+                </div>
+
+                <div class="bg-white shadow-sm hover:shadow-md transition-shadow rounded-lg p-6 text-center">
+                    <svg class="text-primary mx-auto mb-3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12,6 12,12 16,14"/>
+                    </svg>
+                    <h4 class="font-semibold text-gray-900 mb-1">Domain Registration</h4>
+                    <p class="text-sm text-gray-600">From PKR 2,000/year</p>
+                </div>
+
+                <div class="bg-white shadow-sm hover:shadow-md transition-shadow rounded-lg p-6 text-center">
+                    <svg class="text-primary mx-auto mb-3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 1l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"/>
+                    </svg>
+                    <h4 class="font-semibold text-gray-900 mb-1">Voice Over</h4>
+                    <p class="text-sm text-gray-600">From PKR 5,000</p>
+                </div>
+
+                <div class="bg-white shadow-sm hover:shadow-md transition-shadow rounded-lg p-6 text-center">
+                    <svg class="text-primary mx-auto mb-3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                    </svg>
+                    <h4 class="font-semibold text-gray-900 mb-1">Reputation Management</h4>
+                    <p class="text-sm text-gray-600">From PKR 20,000/month</p>
+                </div>
+
+                <div class="bg-white shadow-sm hover:shadow-md transition-shadow rounded-lg p-6 text-center">
+                    <svg class="text-primary mx-auto mb-3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                    </svg>
+                    <h4 class="font-semibold text-gray-900 mb-1">Data Analytics</h4>
+                    <p class="text-sm text-gray-600">From PKR 15,000/month</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Need a Custom Solution?</h2>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                Don't see exactly what you're looking for? We create custom digital solutions tailored to your specific business needs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-primary hover:bg-blue-700 text-white px-8 py-3 rounded-md font-semibold transition-colors">
+                    Request Custom Quote
+                </a>
+                <a href="packages.html" class="border border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 rounded-md font-semibold transition-colors">
+                    View Service Packages
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center text-2xl font-bold text-white mb-4">
+                        <svg class="mr-2" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                        Pixel Craft
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">
+                        Leading digital marketing solutions provider in Pakistan, helping businesses grow their online presence.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Our Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors">Website Development</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors">App Development</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors">Digital Marketing</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors">Graphic Design</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="packages.html" class="text-gray-300 hover:text-white transition-colors">Packages</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <svg class="text-primary mr-3 mt-1 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span class="text-gray-300 text-sm">
+                                Suite 204, Plaza Center,<br />
+                                Blue Area, Islamabad, Pakistan
+                            </span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="text-primary mr-3 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span class="text-gray-300 text-sm">+92-51-1234567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="text-primary mr-3 flex-shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span class="text-gray-300 text-sm">info@pixelcraftpk.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-300">
+                    © 2024 Pixel Craft Marketing Solutions. All rights reserved. |
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a> |
+                    <a href="terms-conditions.html" class="hover:text-white transition-colors">Terms & Conditions</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
